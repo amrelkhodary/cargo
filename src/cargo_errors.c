@@ -3,7 +3,8 @@
 cargostr cargo_errmessages[CARGO_ERR_CODE_COUNT] = {
     "cargo: successful", "cargo: failed",
     "cargo: memory error",
-    "cargo: NULL FILE* pointer"};
+    "cargo: NULL FILE* pointer",
+    "cargo: NULL rule string."};
 
 cargo_errcode cargo_printerr(cargo_errcode code, FILE* dest) {
     if(!dest) {

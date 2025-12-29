@@ -1,6 +1,6 @@
 #ifndef H_CARGO_ERRORS
     #define H_CARGO_ERRORS
-    #define CARGO_ERR_CODE_COUNT 4 //number of recognized err codes
+    #define CARGO_ERR_CODE_COUNT 5 //number of recognized err codes
 
     #include "./cargo_structures.h" //for cargostr
     #include <stdio.h> //for FILE*
@@ -10,6 +10,8 @@
        CARGO_FAILED,  //generic failed code, use only when abs. necessary
        CARGO_MEMORY_ERROR,
        CARGO_NULL_FILE, //passed null to a func not expecting null
+       CARGO_NULL_RULESTR,
+
     } cargo_errcode;
 
     typedef struct {
