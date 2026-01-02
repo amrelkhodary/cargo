@@ -1,4 +1,5 @@
 #include "../headers/cargo_interface.h"
+#include <cdyar_macros.h>
 
 static
 cargo_errcode
@@ -21,6 +22,29 @@ cargo_checkrule(const cargorule* rule) {
 
    return CARGO_SUCCESSFUL;
 }
+
+static
+size_t cargo_calcsize_argv(const int argc, const char** argv) {
+    if(argc <= 0) {
+        return CARGO_NONPOSITIVE_ARGC;
+    }
+
+    if(!argv) {
+        return CARGO_NULL_INPUT;
+    }
+
+    size_t total_strsize = 0;
+    for(int i = 0; i<argc; i++) {
+        if(!argv[i]) {
+            return CARGO_NULL_INPUT;
+        }
+
+        total_strsize += strlen(argv[i]) + 1; //+1 for null terminator for each string
+    }
+
+    return total_strsize;
+}
+
 
 static
 cargo_errcode
