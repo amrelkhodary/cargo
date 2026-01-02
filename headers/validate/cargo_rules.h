@@ -8,11 +8,11 @@
 
     typedef struct {
         cargostr rulestr;
-        regex_t compiledrule;
+        regex_t* compiledrule;
         cargostatus* status;
     } cargorule;
 
     cargorule* cargo_newrule(cargostr rulestr, cargo_binflags flags);
-    cargo_errcode cargo_deleterule(cargorule* ruleptr, cargoflag isOnHeap);
+    cargo_errcode cargo_deleterule(cargorule* ruleptr);
     void cargo_compile(cargorule* rule);
 #endif
