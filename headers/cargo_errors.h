@@ -1,6 +1,6 @@
 #ifndef H_CARGO_ERRORS
 #define H_CARGO_ERRORS
-#define CARGO_ERR_CODE_COUNT 8 // number of recognized err codes
+#define CARGO_ERR_CODE_COUNT 11
 
 #include "./cargo_structures.h" //for cargostr
 #include <stdio.h>              //for FILE*
@@ -14,6 +14,10 @@ typedef enum {
   CARGO_NULL_STATUS,
   CARGO_NULL_STR,
   CARGO_NULL_RULE,
+  CARGO_NONPOSITIVE_ARGC,
+  CARGO_NULL_INPUT,
+  CARGO_UNCOMPILED_RULE,
+
 } cargo_errcode;
 
 typedef struct {
